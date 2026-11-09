@@ -150,6 +150,8 @@
   .award-imgs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
   .award-imgs button{cursor:zoom-in;overflow:hidden;background:var(--ink-2)}
   .award-imgs img{width:100%;aspect-ratio:1;object-fit:cover}
+  .award-imgs figure{margin:0}.award-imgs button{display:block;width:100%}
+  .award-imgs figcaption{margin-top:10px}
   @media (max-width:860px){.about{grid-template-columns:1fr}.about .portrait{position:static;max-width:420px}}
 
   .cv{display:grid;grid-template-columns:240px 1fr;gap:0 clamp(24px,5vw,72px)}
@@ -178,6 +180,15 @@
     .credits td:first-child{width:auto}
   }
 
+  .resume-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(28px,4vw,48px)}
+  .resume-head h1{margin-bottom:0}
+  .resume-actions{display:flex;gap:10px}
+  .btn{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:12px 18px;border:1px solid #57554e;border-radius:99px}
+  .btn:hover{border-color:var(--paper)}
+  .btn.solid{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+  .btn.solid:hover{background:var(--paper);border-color:var(--paper)}
+  .resume-sheet{display:block;max-width:880px;margin:0 auto;background:#fff;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .resume-sheet img{width:100%}
   .contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:end}
   .contact .big{font-stretch:72%;font-weight:750;font-size:clamp(28px,4.4vw,64px);line-height:1.05;text-decoration:none;word-break:break-all;border-bottom:2px solid var(--amber);display:inline-block}
   .contact .big:hover{color:var(--amber)}
@@ -279,8 +290,10 @@
             <div class="award"><div class="yr">KTF</div><div><b><i>Six</i> named one of the top 3 shows in Kansas</b><span>Transported the production to the Kansas Thespian Festival</span></div></div>
           </div>
           <div class="award-imgs">
-            <button data-lb="awards" data-i="1"><img src="images/awards-02.jpg" alt="Shooting Stars certificates" loading="lazy"></button>
-            <button data-lb="awards" data-i="2"><img src="images/awards-03.jpg" alt="Production and Design 1st Place Scholarship recipient graphic" loading="lazy"></button>
+            <figure><button data-lb="awards" data-i="1"><img src="images/awards-02.jpg" alt="Shooting Stars certificates" loading="lazy"></button><figcaption class="label">Shooting Stars certificates</figcaption></figure>
+            <figure><button data-lb="awards" data-i="2"><img src="images/awards-03.jpg" alt="Production and Design 1st Place Scholarship recipient graphic" loading="lazy"></button><figcaption class="label">1st Place, Production &amp; Design</figcaption></figure>
+            <figure><button data-lb="awards" data-i="3"><img src="images/almost-maine-03.jpg" alt="Almost, Maine scenic design model" loading="lazy"></button><figcaption class="label"><i>Almost, Maine</i> model &middot; Excellent, KTF</figcaption></figure>
+            <figure><button data-lb="awards" data-i="4"><img src="images/six-the-musical-02.jpg" alt="Six set on stage" loading="lazy"></button><figcaption class="label"><i>Six</i> &middot; Top 3 in Kansas, KTF</figcaption></figure>
           </div>
         </div>
       </div>
@@ -290,43 +303,14 @@
   <!-- RESUME -->
   <section class="view" id="v-resume">
     <div class="page">
-      <h1 class="display">Resume</h1>
-      <div class="cv">
-        <div class="label">Theatre Credits</div>
-        <div class="blk"><table class="credits" id="credits"></table></div>
-
-        <div class="label">Education</div>
-        <div class="blk edu">
-          <b>Missouri State University</b>
-          <span>BFA, Theatre Design Technology &amp; Stage Management</span>
-          <span class="label">2026 – 2030</span>
+      <div class="resume-head">
+        <h1 class="display">Resume</h1>
+        <div class="resume-actions">
+          <a class="btn solid" href="resume.pdf" target="_blank" rel="noopener">Open PDF</a>
+          <a class="btn" href="resume.pdf" download="Nash_Swinson_Resume.pdf">Download</a>
         </div>
-
-        <div class="label">Skills</div>
-        <div class="blk pills">
-          <span>Scenic design</span><span>Scenic construction</span><span>Vectorworks</span><span>Revit</span><span>Hand drafting</span><span>Model building</span><span>Welding &amp; metal fabrication</span><span>Theatre rigging</span><span>Fly system operation</span><span>Genie &amp; boom lift operation</span><span>Power tools</span><span>Scaffolding &amp; ladders</span><span>Team training &amp; leading</span><span>OSHA 10 certified</span>
-        </div>
-
-        <div class="label">Shop Experience</div>
-        <div class="blk">
-          <ul>
-            <li><b>Theatre in the Park</b>, Scenic Carpenter, summer 2026. Welded and fabricated metal for three large-scale productions; built from scenic drafting, 40 hours a week, May through August.</li>
-            <li><b>Shawnee Mission South</b>, Lead Carpenter, two years.</li>
-          </ul>
-        </div>
-
-        <div class="label">Recognition</div>
-        <div class="blk">
-          <ul>
-            <li>2026 Shooting Stars 1st Place Scholarship, Production &amp; Design (Arts Council of Johnson County)</li>
-            <li>Excellent rating on <i>Almost, Maine</i> scenic design model, Kansas Thespian Festival</li>
-            <li><i>Six</i> awarded one of the top 3 shows in Kansas, Kansas Thespian Festival</li>
-          </ul>
-        </div>
-
-        <div class="label">References</div>
-        <div class="blk"><p style="color:#cfcac0">Available on request.</p></div>
       </div>
+      <a class="resume-sheet" href="resume.pdf" target="_blank" rel="noopener"><img src="images/resume.jpg" alt="Nash Swinson resume"></a>
     </div>
   </section>
 
@@ -419,7 +403,7 @@ const P = [
 ];
 // card layout order on the grid
 const ORDER = ["almost-maine","cabaret","noises-off","six","hunchback","how-to-succeed","oklahoma"];
-const AWARDS = ["awards-01","awards-02","awards-03"];
+const AWARDS = ["awards-01","awards-02","awards-03","almost-maine-03","six-the-musical-02"];
 const src = n => `images/${n}.jpg`;
 const byId = id => P.find(p=>p.id===id);
 
@@ -439,8 +423,7 @@ document.getElementById('filters').addEventListener('click',e=>{
 });
 
 /* ---------- credits ---------- */
-document.getElementById('credits').innerHTML = P.slice().sort((a,b)=>b.year-a.year).map(p=>`
-  <tr><td><a href="#${p.id}">${p.title}</a></td><td>${p.role}</td><td>${p.venue}</td><td>${p.year}</td></tr>`).join('');
+
 
 /* ---------- hero slideshow ---------- */
 const HERO = [["almost-maine-16","Almost, Maine","Scenic Designer"],["hunchback-15","The Hunchback of Notre Dame","Scenic Carpenter"],["cabaret-03","Cabaret","Assistant Scenic Designer"],["how-to-succeed-06","How to Succeed","Scenic Carpenter"],["almost-maine-15","Almost, Maine","Scenic Designer"]];
