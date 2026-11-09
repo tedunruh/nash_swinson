@@ -88,6 +88,7 @@
   .card h3{font-stretch:72%;font-weight:750;font-size:clamp(24px,2.6vw,34px);text-transform:uppercase;line-height:1}
   .card .meta .label{white-space:nowrap}
   .card .sub{margin-top:6px;color:var(--amber);font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase}
+  .card-award{margin-top:8px;display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--amber);padding:4px 9px}
   .card.hide{display:none}
   @media (max-width:860px){.card,.card.third{grid-column:span 12}.card.wide .ph{aspect-ratio:4/3}}
 
@@ -113,6 +114,10 @@
   .proj-body{padding:clamp(48px,7vw,88px) var(--pad) 0;display:grid;grid-template-columns:1fr 2fr;gap:clamp(24px,5vw,80px)}
   .proj-body p{font-size:clamp(18px,1.6vw,22px);line-height:1.5;color:#dcd7cc;max-width:42ch}
   @media (max-width:860px){.proj-body{grid-template-columns:1fr}}
+  .award-banner{margin:clamp(32px,4vw,48px) var(--pad) 0;display:flex;align-items:center;gap:22px;padding:22px 26px;border:1px solid var(--amber);background:linear-gradient(90deg,rgba(233,180,76,.12),rgba(233,180,76,0) 70%)}
+  .award-banner .label{color:var(--amber)}
+  .ab-mark{flex:none;width:52px;height:52px;border-radius:50%;border:1px solid var(--amber);display:grid;place-items:center;color:var(--amber);font-size:22px}
+  .ab-text{margin-top:4px;font-stretch:75%;font-weight:700;font-size:clamp(20px,2.2vw,30px);text-transform:uppercase;line-height:1.1}
   .gal{padding:clamp(48px,7vw,88px) var(--pad) 0}
   .gal h4{display:flex;align-items:center;gap:14px;margin-bottom:22px}
   .gal h4::after{content:"";flex:1;height:1px;background:var(--line)}
@@ -269,7 +274,7 @@
             <div class="label" style="margin-bottom:14px">Awards &amp; Recognition</div>
             <div class="award"><div class="yr">2026</div><div><b>Shooting Stars 1st Place Scholarship, Production &amp; Design</b><span>Arts Council of Johnson County</span></div></div>
             <div class="award"><div class="yr">2026</div><div><b>Shooting Stars Certification of Nomination, Production &amp; Design</b><span>Arts Council of Johnson County</span></div></div>
-            <div class="award"><div class="yr">KTF</div><div><b>Excellent rating, Scenic Design model</b><span>Kansas Thespian Festival</span></div></div>
+            <div class="award"><div class="yr">KTF</div><div><b>Excellent rating, <i>Almost, Maine</i> scenic design model</b><span>Kansas Thespian Festival</span></div></div>
             <div class="award"><div class="yr">KTF</div><div><b><i>Six</i> named one of the top 3 shows in Kansas</b><span>Transported the production to the Kansas Thespian Festival</span></div></div>
           </div>
           <div class="award-imgs">
@@ -313,7 +318,7 @@
         <div class="blk">
           <ul>
             <li>2026 Shooting Stars 1st Place Scholarship, Production &amp; Design (Arts Council of Johnson County)</li>
-            <li>Excellent rating on Scenic Design model, Kansas Thespian Festival</li>
+            <li>Excellent rating on <i>Almost, Maine</i> scenic design model, Kansas Thespian Festival</li>
             <li><i>Six</i> awarded one of the top 3 shows in Kansas, Kansas Thespian Festival</li>
           </ul>
         </div>
@@ -362,7 +367,7 @@
 const P = [
   { id:"almost-maine", title:"Almost, Maine", year:"2025", venue:"Shawnee Mission South", role:"Scenic Designer", cat:"design",
     cover:"almost-maine-16", size:"wide",
-    blurb:"An original design taken from first sketch to opening night. A sculpted, snow-covered landscape of curved platforms rises in tiers toward a central bench, ringed by layered pine silhouettes that shift from moonlit blue to warm dusk under light.",
+    award:["Kansas Thespian Festival","Scenic design model judged at KTF and awarded an Excellent rating"],
     sections:[
       ["Final Product",["almost-maine-16","almost-maine-15","almost-maine-17"]],
       ["Study Models",["almost-maine-01","almost-maine-02","almost-maine-03","almost-maine-05","almost-maine-06","almost-maine-07","almost-maine-08"]],
@@ -371,7 +376,6 @@ const P = [
     ]},
   { id:"cabaret", title:"Cabaret", year:"2026", venue:"Shawnee Mission South", role:"Assistant Scenic Designer", cat:"design",
     cover:"cabaret-03", size:"",
-    blurb:"A Kit Kat Klub of weathered brick, a red-curtained proscenium and a sweeping stair, planned digitally and then framed, skinned and painted in the shop.",
     sections:[
       ["Final Product",["cabaret-03","cabaret-02"]],
       ["Digital Design",["cabaret-10"]],
@@ -379,21 +383,19 @@ const P = [
     ]},
   { id:"noises-off", title:"Noises Off", year:"2026", venue:"Shawnee Mission South", role:"Assistant Technical Director", cat:"tech",
     cover:"noises-off-03", size:"",
-    blurb:"The farce's two-story country house, with working doors, a stair and an upper gallery, built to take a beating night after night and to read as a full home on stage.",
     sections:[
       ["Final Product",["noises-off-03","noises-off-04","noises-off-05"]],
       ["Build Process",["noises-off-01","noises-off-02"]]
     ]},
   { id:"six", title:"Six", year:"2024", venue:"Shawnee Mission South", role:"Technical Director", cat:"tech",
     cover:"six-the-musical-02", size:"",
-    blurb:"Hand-drafted technical drawings for the show's towering lattice-framed units, built to carry a concert-style lighting rig. The production traveled to the Kansas Thespian Festival and was named one of the top three shows in Kansas.",
+    award:["Kansas Thespian Festival","Awarded one of the Top 3 productions in Kansas"],
     sections:[
       ["Final Product",["six-the-musical-02","six-the-musical-04","six-the-musical-05"]],
       ["Technical Drawings",["six-the-musical-01","six-the-musical-03"]]
     ]},
   { id:"hunchback", title:"The Hunchback of Notre Dame", year:"2026", venue:"Theatre in the Park", role:"Scenic Carpenter", cat:"build",
     cover:"hunchback-15", size:"",
-    blurb:"A full Gothic cathedral facade for an outdoor stage: tracery arches, a painted rose window raised into place on a lift, cathedral doors and a pyre, all built from professional drafting.",
     sections:[
       ["Final Product",["hunchback-15","hunchback-09","hunchback-10","hunchback-16"]],
       ["Scenic Pieces",["hunchback-06","hunchback-17","hunchback-03","hunchback-04","hunchback-01","hunchback-05","hunchback-11","hunchback-12","hunchback-13"]],
@@ -402,7 +404,6 @@ const P = [
     ]},
   { id:"how-to-succeed", title:"How to Succeed in Business Without Really Trying", year:"2026", venue:"Theatre in the Park", role:"Scenic Carpenter", cat:"build",
     cover:"how-to-succeed-14", size:"",
-    blurb:"Navy-and-gold Art Deco walls, skyline windows and rolling office units for an open-air stage, fabricated in metal and wood from scenic drafting.",
     sections:[
       ["Final Product",["how-to-succeed-06","how-to-succeed-14","how-to-succeed-15","how-to-succeed-10","how-to-succeed-09","how-to-succeed-07","how-to-succeed-12","how-to-succeed-16"]],
       ["Drafting & Renderings",["how-to-succeed-02","how-to-succeed-19"]],
@@ -410,7 +411,6 @@ const P = [
     ]},
   { id:"oklahoma", title:"Oklahoma!", year:"2026", venue:"Theatre in the Park", role:"Scenic Carpenter", cat:"build",
     cover:"oklahoma-01", size:"",
-    blurb:"Prairie fences, wagon wheels, a farmhouse, a smokehouse and a steel windmill tower under an open Kansas sky.",
     sections:[
       ["Final Product",["oklahoma-01","oklahoma-07","oklahoma-02"]],
       ["Scenic Pieces",["oklahoma-06","oklahoma-05","oklahoma-04","oklahoma-03","oklahoma-08"]]
@@ -428,7 +428,7 @@ grid.innerHTML = ORDER.map(id=>{const p=byId(id); return `
   <a class="card ${p.size}" data-cat="${p.cat}" href="#${p.id}">
     <div class="ph"><img src="${src(p.cover)}" alt="${p.title} set" loading="lazy"></div>
     <div class="meta"><h3>${p.title}</h3><span class="label">${p.year}</span></div>
-    <div class="sub">${p.role} · ${p.venue}</div>
+    <div class="sub">${p.role} · ${p.venue}</div>${p.award?`<div class="card-award">★ ${p.award[1].includes("Top 3")?"Top 3 in Kansas, KTF":"Excellent rating, KTF"}</div>`:""}
   </a>`}).join('');
 document.getElementById('filters').addEventListener('click',e=>{
   const b=e.target.closest('button'); if(!b) return;
@@ -461,7 +461,7 @@ function renderProject(p){
       <div><div class="label">Year</div><div class="v">${p.year}</div></div>
       <div><div class="label">Images</div><div class="v">${p.sections.reduce((a,s)=>a+s[1].length,0)}</div></div>
     </div>
-    <div class="proj-body"><div class="label">Overview</div><p>${p.blurb}</p></div>
+    ${p.award?`<div class="award-banner"><div class="ab-mark">★</div><div><div class="label">${p.award[0]}</div><div class="ab-text">${p.award[1]}</div></div></div>`:''}
     ${p.sections.map(([h,imgs])=>`
       <div class="gal"><h4 class="label">${h}</h4><div class="masonry">
         ${imgs.map(n=>`<button data-lb="${p.id}" data-i="${k++}"><img src="${src(n)}" alt="${p.title}, ${h.toLowerCase()}" loading="lazy"></button>`).join('')}
